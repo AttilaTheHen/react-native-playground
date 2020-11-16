@@ -23,13 +23,21 @@ export default function EditScreenInfo({ path }: { path: string }) {
           lightColor="rgba(0,0,0,0.05)">
           <MonoText>{path}</MonoText>
         </View>
-
-        <Text
-          style={styles.getStartedText}
-          lightColor="rgba(0,0,0,0.8)"
-          darkColor="rgba(255,255,255,0.8)">
-          Change any of the text, save the file, and your app will automatically update.
-        </Text>
+        {path === '/screens/TabTwoScreen.js' ? 
+          <Text
+            style={styles.getStartedText}
+            lightColor="rgba(0,0,0,0.8)"
+            darkColor="rgba(255,255,255,0.8)">
+            ...and this is Tab Two.
+          </Text>
+          :
+          <Text
+            style={styles.getStartedText}
+            lightColor="rgba(0,0,0,0.8)"
+            darkColor="rgba(255,255,255,0.8)">
+            This is Tab One...
+          </Text> 
+        }
       </View>
 
       <View style={styles.helpContainer}>
