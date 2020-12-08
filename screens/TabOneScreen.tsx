@@ -1,15 +1,17 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
+import pokedex from '../assets/pokedex/pokemon';
 
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Tab One</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabOneScreen.js" />
+      {pokedex.map(pokemons => (
+        <Text key={pokemons.id}>{pokemons.pokemon}</Text>
+      ))}
     </View>
   );
 }
