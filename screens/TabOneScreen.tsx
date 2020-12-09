@@ -1,17 +1,18 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, ScrollView } from 'react-native';
 
 import { Text, View } from '../components/Themed';
-import pokedex from '../assets/pokedex/pokemon';
+import Pokedex from '../components/Pokedex';
+{/* import pokedex from '../assets/pokedex/pokemon'; */}
 
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Tab One</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      {pokedex.map(pokemons => (
-        <Text key={pokemons.id}>{pokemons.pokemon}</Text>
-      ))}
+      <ScrollView>
+        <Pokedex />
+      </ScrollView>
     </View>
   );
 }
@@ -25,6 +26,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: 'bold',
+    marginTop: 30,
   },
   separator: {
     marginVertical: 30,
