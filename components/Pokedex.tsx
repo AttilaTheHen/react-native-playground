@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, FlatList } from 'react-native';
+import { ActivityIndicator, FlatList, TouchableOpacity } from 'react-native';
 // @ts-ignore
 import { Card } from 'galio-framework';
 
@@ -9,6 +9,7 @@ import getPokemon from '../services/pokeApi';
 const Pokedex = () => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
+  const [selectedItem, setSelectedItem] = useState(null);
   
   useEffect(() => {
     getPokemon()
@@ -18,11 +19,13 @@ const Pokedex = () => {
   }, []);
   
   const renderItem = ({ item }: { item: any }) => (
-    <Card
-      flex
-      title={item.name}
-      style={{ margin: 5 }}
-    />
+    <TouchableOpacity onPress={() => setSelectedItem(item.name)} style={{ flex: 0.5 }}>
+      <Card
+        flex
+        title={item.name}
+        style={{ margin: 5 }}
+      />
+    </TouchableOpacity>
   );
   
   return (
