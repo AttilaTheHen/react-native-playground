@@ -29,7 +29,7 @@ const Pokedex = () => {
   );
   
   return (
-    <View style={{ margin: 5 }}>
+    <View style={{ margin: 5, marginBottom: 75 }}>
       {isLoading ? <ActivityIndicator /> : (
         <FlatList
           data={data}

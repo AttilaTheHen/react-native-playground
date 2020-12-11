@@ -8,7 +8,7 @@ import Pokedex from '../components/Pokedex';
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
+      <Text style={styles.title}>Pokedex</Text>
       <View>
         <Pokedex />
       </View>
@@ -21,12 +21,9 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   title: {
-    fontSize: 20,
+    fontSize: 34,
     fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 15,
-    height: 1,
-    width: '80%',
-  },
+    marginVertical: 20,
+    marginLeft: 10,
+  }
 });
