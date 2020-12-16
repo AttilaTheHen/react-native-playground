@@ -5,7 +5,6 @@ import { Card } from 'galio-framework';
 
 import { View } from './Themed';
 import getPokemon from '../services/pokeApi';
-import localPokemon from '../assets/pokedex/pokemon';
 
 const Pokedex = () => {
   const [isLoading, setLoading] = useState(true);
