@@ -5,6 +5,7 @@ import { Card } from 'galio-framework';
 
 import { View } from './Themed';
 import getPokemon from '../services/pokeApi';
+import localPokemon from '../assets/pokedex/pokemon';
 
 const Pokedex = () => {
   const [isLoading, setLoading] = useState(true);
@@ -18,11 +19,12 @@ const Pokedex = () => {
       .finally(() => setLoading(false));
   }, []);
   
-  const renderItem = ({ item }: { item: any }) => (
+  const renderItem = ({ item, index }: { item: any, index: number }) => (
     <TouchableOpacity onPress={() => setSelectedItem(item.name)} style={{ flex: 0.5 }}>
       <Card
         flex
         title={item.name}
+        image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`}
         style={{ margin: 5 }}
       />
     </TouchableOpacity>
