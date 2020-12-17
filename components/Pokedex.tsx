@@ -4,12 +4,12 @@ import { ActivityIndicator, FlatList, TouchableOpacity } from 'react-native';
 import { Card } from 'galio-framework';
 
 import { View } from './Themed';
+import { Props } from '../types';
 import getPokemon from '../services/pokeApi';
 
-const Pokedex = () => {
+const Pokedex = ({ navigation }: Props) => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
-  const [selectedItem, setSelectedItem] = useState(null);
 
   useEffect(() => {
     getPokemon()
@@ -18,15 +18,7 @@ const Pokedex = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  const renderItem = ({
-    item,
-    index,
-    navigation,
-  }: {
-    item: any;
-    index: any;
-    navigation: Props;
-  }) => (
+  const renderItem = ({ item, index }: { item: any; index: any }) => (
     <TouchableOpacity onPress={() => navigation.navigate('Pokemon')} style={{ flex: 0.5 }}>
       <Card
         flex
