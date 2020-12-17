@@ -7,6 +7,7 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
+import Pokemon from '../screens/Pokemon';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
@@ -17,7 +18,8 @@ export default function BottomTabNavigator() {
   return (
     <BottomTab.Navigator
       initialRouteName="TabOne"
-      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
+      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}
+    >
       <BottomTab.Screen
         name="TabOne"
         component={TabOneNavigator}
@@ -54,6 +56,7 @@ function TabOneNavigator() {
         component={TabOneScreen}
         options={{ headerTitle: 'Home' }}
       />
+      <TabOneStack.Screen name="Pokemon" component={Pokemon} options={{ headerTitle: 'Details' }} />
     </TabOneStack.Navigator>
   );
 }

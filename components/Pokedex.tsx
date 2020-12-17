@@ -18,8 +18,16 @@ const Pokedex = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  const renderItem = ({ item, index }: { item: any; index: number }) => (
-    <TouchableOpacity onPress={() => setSelectedItem(item.name)} style={{ flex: 0.5 }}>
+  const renderItem = ({
+    item,
+    index,
+    navigation,
+  }: {
+    item: any;
+    index: any;
+    navigation: Props;
+  }) => (
+    <TouchableOpacity onPress={() => navigation.navigate('Pokemon')} style={{ flex: 0.5 }}>
       <Card
         flex
         title={item.name}
