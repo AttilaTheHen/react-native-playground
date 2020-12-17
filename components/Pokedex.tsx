@@ -19,7 +19,10 @@ const Pokedex = ({ navigation }: Props) => {
   }, []);
 
   const renderItem = ({ item, index }: { item: any; index: any }) => (
-    <TouchableOpacity onPress={() => navigation.navigate('Pokemon')} style={{ flex: 0.5 }}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate('Pokemon', { name: item.name })}
+      style={{ flex: 0.5 }}
+    >
       <Card
         flex
         title={item.name}
