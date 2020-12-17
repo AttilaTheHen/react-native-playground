@@ -20,8 +20,8 @@ export type TabTwoParamList = {
   TabTwoScreen: undefined;
 };
 
-export type PokemonScreenNavigationProp = StackNavigationProp<TabOneParamList, 'Pokemon'>;
-export type PokemonScreenRouteProp = RouteProp<TabOneParamList, 'Pokemon'>;
+type PokemonScreenNavigationProp = StackNavigationProp<TabOneParamList, 'Pokemon'>;
+type PokemonScreenRouteProp = RouteProp<TabOneParamList, 'Pokemon'>;
 
 export type Props = {
   route: PokemonScreenRouteProp;

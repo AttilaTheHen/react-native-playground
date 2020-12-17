@@ -1,9 +1,10 @@
 import React from 'react';
 
 import { Text } from '../components/Themed';
+import { Props } from '../types';
 
-const Pokemon = ({ route }: { route: any }) => {
-  return <Text>{route.params.name}</Text>;
+const Pokemon = ({ navigation, route }: Props) => {
+  return <Text>Hi</Text>;
 };
 
 export default Pokemon;
