@@ -20,13 +20,13 @@ const Pokedex = ({ navigation }: Props) => {
 
   const renderItem = ({ item, index }: { item: any; index: any }) => (
     <TouchableOpacity
-      onPress={() => navigation.navigate('Pokemon', { name: item.name })}
+      onPress={() => navigation.navigate('Pokemon', { name: item.name, id: index })}
       style={{ flex: 0.5 }}
     >
       <Card
         flex
         title={item.name}
-        image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+        image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${
           index + 1
         }.png`}
         style={{ margin: 5 }}
