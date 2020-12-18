@@ -7,6 +7,10 @@ import { View } from './Themed';
 import { Props } from '../types';
 import getPokemon from '../services/pokeApi';
 
+interface pokemonItem {
+  name: string;
+}
+
 const Pokedex = ({ navigation }: Props) => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
@@ -18,9 +22,9 @@ const Pokedex = ({ navigation }: Props) => {
       .finally(() => setLoading(false));
   }, []);
 
-  const renderItem = ({ item, index }: { item: any; index: any }) => (
+  const renderItem = ({ item, index }: { item: pokemonItem; index: number }) => (
     <TouchableOpacity
-      onPress={() => navigation.navigate('Pokemon', { name: item.name, id: index })}
+      onPress={() => navigation.navigate('Pokemon', { name: item.name, id: index + 1 })}
       style={{ flex: 0.5 }}
     >
       <Card
