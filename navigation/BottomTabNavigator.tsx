@@ -56,7 +56,11 @@ function TabOneNavigator() {
         component={TabOneScreen}
         options={{ headerTitle: 'Home' }}
       />
-      <TabOneStack.Screen name="Pokemon" component={Pokemon} options={{ headerTitle: 'Details' }} />
+      <TabOneStack.Screen
+        name="Pokemon"
+        component={Pokemon}
+        options={({ route }) => ({ title: route.params.name })}
+      />
     </TabOneStack.Navigator>
   );
 }
