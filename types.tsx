@@ -13,7 +13,7 @@ export type BottomTabParamList = {
 
 export type TabOneParamList = {
   TabOneScreen: undefined;
-  Pokemon: { name: string; id: number };
+  Pokemon: { name: string; id: number; displayName: string };
 };
 
 export type TabTwoParamList = {
