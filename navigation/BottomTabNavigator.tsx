@@ -59,7 +59,7 @@ function TabOneNavigator() {
       <TabOneStack.Screen
         name="Pokemon"
         component={Pokemon}
-        options={({ route }) => ({ title: route.params.name })}
+        options={({ route }) => ({ title: route.params.displayName })}
       />
     </TabOneStack.Navigator>
   );
