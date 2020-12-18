@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, FlatList, TouchableOpacity } from 'react-native';
+import { ActivityIndicator, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
 // @ts-ignore
 import { Card } from 'galio-framework';
 
@@ -47,6 +47,8 @@ const Pokedex = ({ navigation }: Props) => {
     >
       <Card
         flex
+        shadowColor={'black'}
+        borderless
         title={formatName(item.name)}
         image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${
           index + 1
@@ -73,3 +75,16 @@ const Pokedex = ({ navigation }: Props) => {
 };
 
 export default Pokedex;
+
+{
+  /* const styles = StyleSheet.create({
+  shadow: {
+    shadowOffset: { width: 10, height: 10 },
+    shadowColor: 'black',
+    shadowOpacity: 1,
+    elevation: 3,
+    zIndex: 999,
+    flex: 0.5,
+  },
+}); */
+}
