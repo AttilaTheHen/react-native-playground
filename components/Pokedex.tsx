@@ -50,7 +50,14 @@ const Pokedex = ({ navigation }: Props) => {
         image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${
           index + 1
         }.png`}
-        style={{ margin: 5 }}
+        imageBlockStyle={{ padding: 10 }}
+        imageStyle={{ flex: 1, resizeMode: 'contain', backgroundColor: 'black', borderRadius: 5 }}
+        style={{
+          margin: 5,
+          borderColor: '#FFDE00',
+          backgroundColor: '#FFDE00',
+          borderWidth: 3,
+        }}
       />
     </TouchableOpacity>
   );
