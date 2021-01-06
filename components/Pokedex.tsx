@@ -6,8 +6,11 @@ import { Card } from 'galio-framework';
 import { View } from './Themed';
 import { Props } from '../types';
 import getPokemon from '../services/pokeApi';
+import basicPokemon from '../services/basicPokemon.js';
 
-interface pokemonItem {
+console.log('basicPokemon', basicPokemon);
+
+interface PokemonItem {
   name: string;
 }
 
@@ -34,7 +37,7 @@ const Pokedex = ({ navigation }: Props) => {
       .finally(() => setLoading(false));
   }, []);
 
-  const renderItem = ({ item, index }: { item: pokemonItem; index: number }) => (
+  const renderItem = ({ item, index }: { item: PokemonItem; index: number }) => (
     <TouchableOpacity
       onPress={() =>
         navigation.navigate('Pokemon', {
@@ -46,17 +49,21 @@ const Pokedex = ({ navigation }: Props) => {
       style={{ flex: 0.5 }}
     >
       <Card
+        borderless
         title={formatName(item.name)}
         image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${
           index + 1
         }.png`}
         imageBlockStyle={{ padding: 10 }}
-        imageStyle={{ flex: 1, resizeMode: 'contain', backgroundColor: 'black', borderRadius: 5 }}
+        imageStyle={{
+          flex: 1,
+          resizeMode: 'contain',
+          backgroundColor: 'black',
+          borderRadius: 5,
+        }}
         style={{
           margin: 5,
-          borderColor: '#FFDE00',
           backgroundColor: '#FFDE00',
-          borderWidth: 3,
         }}
       />
     </TouchableOpacity>
