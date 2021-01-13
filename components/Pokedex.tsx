@@ -50,7 +50,7 @@ const Pokedex = ({ navigation }: Props) => {
         image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${
           index + 1
         }.png`}
-        pokemonType={basicPokemon[index + 1]?.type || null}
+        pokemonType={basicPokemon[index + 1]?.type}
       />
     </TouchableOpacity>
   );
