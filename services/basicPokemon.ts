@@ -1,4 +1,21 @@
-export default {
+interface allPokemon {
+  [key: number]: basicPokemonItem;
+}
+
+interface basicPokemonItem {
+  name: string;
+  attack: number;
+  defense: number;
+  evolveLevel?: number;
+  evolveTo?: string;
+  type: string;
+  moves: string[];
+  curve: number;
+  levels?: number[];
+  probability?: number;
+}
+
+const basicPokemon: allPokemon = {
   1: {
     name: 'Bulbasaur',
     attack: 49,
@@ -94,6 +111,18 @@ export default {
     attack: 30,
     defense: 35,
     evolveLevel: 7,
+    evolveTo: '11',
+    type: 'bug',
+    moves: ['tackle'],
+    curve: 1.6,
+    levels: [2, 7],
+    probability: 15,
+  },
+  11: {
+    name: 'Metapod',
+    attack: 1,
+    defense: 1,
+    evolveLevel: 1,
     evolveTo: '11',
     type: 'bug',
     moves: ['tackle'],
@@ -417,6 +446,14 @@ export default {
     attack: 105,
     defense: 60,
     type: 'fighting',
+    moves: ['scratch', 'low kick', 'karate chop', 'cross chop'],
+    curve: 1.6,
+  },
+  58: {
+    name: 'Growlithe',
+    attack: 1,
+    defense: 1,
+    type: 'fire',
     moves: ['scratch', 'low kick', 'karate chop', 'cross chop'],
     curve: 1.6,
   },
@@ -1213,3 +1250,5 @@ export default {
     probability: 0.3,
   },
 };
+
+export default basicPokemon;
