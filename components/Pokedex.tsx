@@ -6,9 +6,8 @@ import { Card } from 'galio-framework';
 import { View } from './Themed';
 import { Props } from '../types';
 import getPokemon from '../services/pokeApi';
-import basicPokemon from '../services/basicPokemon.js';
-
-console.log('basicPokemon', basicPokemon);
+import basicPokemon from '../services/basicPokemon';
+import PokemonTypeColors from '../constants/PokemonTypeColors';
 
 interface PokemonItem {
   name: string;
@@ -58,7 +57,7 @@ const Pokedex = ({ navigation }: Props) => {
         imageStyle={{
           flex: 1,
           resizeMode: 'contain',
-          backgroundColor: 'black',
+          backgroundColor: PokemonTypeColors[basicPokemon[index + 1]?.type] || 'darkgray',
           borderRadius: 5,
         }}
         style={{
