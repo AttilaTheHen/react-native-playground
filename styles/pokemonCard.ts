@@ -1,11 +1,9 @@
 import { StyleSheet, ViewStyle, ImageStyle } from 'react-native';
 
-import { colors, icons } from '../constants/PokemonTypes';
-
 interface Style {
   container: ViewStyle;
   title: ViewStyle;
-  formatImage: ImageStyle;
+  image: ImageStyle;
 }
 
 const styles = StyleSheet.create<Style>({
@@ -23,13 +21,12 @@ const styles = StyleSheet.create<Style>({
     fontSize: 18,
     fontWeight: 'bold',
   },
-  formatImage: (type: string): ImageStyle => ({
+  image: {
     flex: 1,
     resizeMode: 'contain',
-    backgroundColor: colors[type] || 'black',
     margin: 10,
     borderRadius: 5,
-  }),
+  },
 });
 
 export default styles;
