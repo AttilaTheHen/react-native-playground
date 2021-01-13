@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, FlatList, TouchableOpacity } from 'react-native';
-// @ts-ignore
-import { Card } from 'galio-framework';
 
 import { View } from './Themed';
 import { Props } from '../types';
+import PokemonCard from '../components/PokemonCard';
 import getPokemon from '../services/pokeApi';
 import basicPokemon from '../services/basicPokemon';
-import PokemonTypeColors from '../constants/PokemonTypeColors';
 
 interface PokemonItem {
   name: string;
@@ -47,23 +45,12 @@ const Pokedex = ({ navigation }: Props) => {
       }
       style={{ flex: 0.5 }}
     >
-      <Card
-        borderless
+      <PokemonCard
         title={formatName(item.name)}
         image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${
           index + 1
         }.png`}
-        imageBlockStyle={{ padding: 10 }}
-        imageStyle={{
-          flex: 1,
-          resizeMode: 'contain',
-          backgroundColor: PokemonTypeColors[basicPokemon[index + 1]?.type] || 'darkgray',
-          borderRadius: 5,
-        }}
-        style={{
-          margin: 5,
-          backgroundColor: '#FFDE00',
-        }}
+        pokemonType={basicPokemon[index + 1]?.type || null}
       />
     </TouchableOpacity>
   );
