@@ -2,7 +2,7 @@ interface Colors {
   [key: string]: string;
 }
 
-const colors: Colors = {
+export const colors: Colors = {
   grass: '#78C850',
   fire: '#F08030',
   water: '#6890F0',
@@ -20,4 +20,20 @@ const colors: Colors = {
   flying: '#A890F0',
 };
 
-export default colors;
+export const icons = {
+  grass: '🍀',
+  fire: '🔥',
+  water: '💧',
+  bug: '🐛',
+  normal: '🌟',
+  poison: '☠️',
+  electric: '⚡️',
+  ground: '🌍',
+  fighting: '💪🏼',
+  psychic: '🔮',
+  rock: '🪨',
+  ghost: '👻',
+  ice: '❄️',
+  dragon: '🐉',
+  flying: '🦅',
+};
